@@ -3,10 +3,10 @@ package http
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/flight-itinerary/flightitinerary/delivery/itinerary"
+	"github.com/flight-itinerary/models"
 	"github.com/labstack/echo"
 	"github.com/stretchr/testify/assert"
-	"github/flight-itinerary/flightitinerary/delivery/itinerary"
-	"github/flight-itinerary/models"
 	"net/http"
 	"net/http/httptest"
 	"testing"

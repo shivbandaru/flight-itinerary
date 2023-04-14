@@ -2,8 +2,8 @@ package logger
 
 import (
 	"context"
+	"github.com/flight-itinerary/models"
 	"github.com/sirupsen/logrus"
-	"github/flight-itinerary/models"
 )
 
 //Logger struct

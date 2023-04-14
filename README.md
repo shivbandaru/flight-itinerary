@@ -1,4 +1,4 @@
-# API Intro: Determine the flight path of a person (for a given list of routes)
+# API : Determine the flight path of a person (for a given list of routes)
 
 ## API Endpoints
 

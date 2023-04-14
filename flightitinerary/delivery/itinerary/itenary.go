@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 	"github.com/davecgh/go-spew/spew"
-	"github/flight-itinerary/flightitinerary"
-	"github/flight-itinerary/logger"
-	"github/flight-itinerary/models"
+	"github.com/flight-itinerary/flightitinerary"
+	"github.com/flight-itinerary/logger"
+	"github.com/flight-itinerary/models"
 )
 
 //ItineraryUsecase...

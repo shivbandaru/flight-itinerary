@@ -1,4 +1,4 @@
-module github/flight-itinerary
+module github.com/flight-itinerary
 
 go 1.18
 

@@ -3,7 +3,7 @@ package http
 import (
 	"bytes"
 	"encoding/json"
-	"github/flight-itinerary/flightitinerary"
+	"github.com/flight-itinerary/flightitinerary"
 	"io"
 
 	"github.com/labstack/echo"

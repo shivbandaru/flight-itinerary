@@ -2,7 +2,7 @@ package flightitinerary
 
 import (
 	"context"
-	"github/flight-itinerary/models"
+	"github.com/flight-itinerary/models"
 )
 
 type Usecase interface {

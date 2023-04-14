@@ -2,8 +2,8 @@ package http
 
 import (
 	"context"
-	"github/flight-itinerary/logger"
-	"github/flight-itinerary/models"
+	"github.com/flight-itinerary/logger"
+	"github.com/flight-itinerary/models"
 	"strconv"
 
 	"net/http"
@@ -27,9 +27,10 @@ func (handler *APIHandler) CalculateItinerary(c echo.Context) error {
 	request := models.RequestJson{}
 
 	if err := c.Bind(&request); err != nil {
-		//if err := DecodeJSON(c.Request().Body, &request); err != nil {
 		return c.JSON(http.StatusBadRequest, models.ResponseError{Code: strconv.Itoa(http.StatusBadRequest), Message: err.Error()})
 	}
+
+	//TODO -- Do we need to validate the Airport codes ?
 
 	ctx := context.WithValue(c.Request().Context(), models.RequestID, c.Response().Header().Get("RequestID"))
 

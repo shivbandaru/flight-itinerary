@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	fi "github/flight-itinerary/flightitinerary/delivery/http"
-	"github/flight-itinerary/flightitinerary/delivery/itinerary"
-	"github/flight-itinerary/middleware"
+	fi "github.com/flight-itinerary/flightitinerary/delivery/http"
+	"github.com/flight-itinerary/flightitinerary/delivery/itinerary"
+	"github.com/flight-itinerary/middleware"
 
 	"github.com/labstack/echo"
 	"net/http"
