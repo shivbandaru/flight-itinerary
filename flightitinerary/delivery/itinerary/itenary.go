@@ -51,6 +51,7 @@ func (s *ItineraryUsecase) CalculateItinerary(c context.Context, request *models
 		for travelCount <= len(routeMap) {
 			if transit, ok := routeMap[temp]; !ok {
 				destination = temp
+				break
 			} else {
 				temp = transit
 			}
