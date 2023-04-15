@@ -30,7 +30,8 @@ func (s *ItineraryUsecase) CalculateItinerary(c context.Context, request *models
 		routeMap := make(map[string]string)
 		routeReverseMap := make(map[string]string)
 		var origin, destination string
-		originCount := 0
+		travelCount := 0
+		origCount := 0
 		destCount := 0
 
 		//Creating a hashmap with from as key and  To as value
@@ -44,20 +45,26 @@ func (s *ItineraryUsecase) CalculateItinerary(c context.Context, request *models
 		for from := range routeMap {
 			if _, ok := routeReverseMap[from]; !ok {
 				origin = from
-				originCount++
+				origCount++
 			}
 		}
 
-		//traverse the map from start to end to get the destination
-		for _, to := range routeMap {
-			if _, ok := routeMap[to]; !ok {
-				destination = to
-				destCount++
+		// Make sure you have only one origin
+		if origCount == 1 {
+			//traverse the map from origin to end to get the destination starting from origin
+			temp := origin
+			for travelCount <= len(routeMap) {
+				if transit, ok := routeMap[temp]; !ok {
+					destination = temp
+					destCount++
+				} else {
+					temp = transit
+				}
+				travelCount++
 			}
 		}
 
-		//There could be a chance if there is a missing route , then we cannot give incorrect origin and destination
-		if origin == "" || destination == "" || originCount > 1 || destCount > 1 {
+		if origin == "" || destination == "" || destCount > 1 {
 			logger.Log.ErrorC(c, "Failed to find origin and destination for given list of routes")
 			return nil, fmt.Errorf("unable to find the origin and destination,this could be a roundtrip or missing route")
 		}
