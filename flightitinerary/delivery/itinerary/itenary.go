@@ -55,6 +55,7 @@ func (s *ItineraryUsecase) CalculateItinerary(c context.Context, request *models
 			} else {
 				temp = transit
 			}
+			travelCount++
 		}
 
 		if origin == "" || destination == "" {
